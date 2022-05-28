@@ -9,10 +9,9 @@ browser = webdriver.Chrome(ChromeDriverManager().install())
 browser.get("http://localhost:1667/#/")
 browser.maximize_window()
 
-
 # browser.quit()
 
-# Test eset 01 -- Regisztráció helytelen adatokkal
+# Teszteset 01 -- Regisztráció helytelen adatokkal
 # def registration_invalid():
 #     sign_up_btn = browser.find_element_by_xpath('//a[@href="#/register"]')
 #     sign_up_btn.click()
@@ -34,10 +33,8 @@ browser.maximize_window()
 #     except AssertionError:
 #         print('Helytelen validáció')
 
-# registration_invalid()
 
-
-# Test eset 02 -- Regisztráció helyes adatokkal
+# Teszteset 02 -- Regisztráció helyes adatokkal
 # def registration_valid():
 #     sign_up_btn = browser.find_element_by_xpath('//a[@href="#/register"]')
 #     sign_up_btn.click()
@@ -61,11 +58,9 @@ browser.maximize_window()
 #
 #     ok_btn = browser.find_element_by_xpath('//button[@class="swal-button swal-button--confirm"]')
 #     ok_btn.click()
-#
-# registration_valid()
 
 
-# Test eset 03 -- Bejelentkezés
+# Teszteset 03 -- Bejelentkezés
 # def sign_in():
 #     home_sign_in_btn = browser.find_elements_by_xpath('//a[@href="#/login"]')[0]
 #     # sign_in_btn = browser.find_elements_by_xpath('//a[normalize-space()="Sign in"]')[0]
@@ -86,22 +81,17 @@ browser.maximize_window()
 #         print('Nem sikerült bejelentkezni')
 
 
-# Test eset 04 -- Adatkezelési nyilatkozat használata
-def accept_cookies():
-    accept_btn = browser.find_element_by_xpath('//div[normalize-space()="I accept!"]')
-    accept_btn.click()
-    time.sleep(1)
-    decline_btn_list = browser.find_elements_by_xpath('//div[normalize-space()="I decline!"]')
-    print(len(decline_btn_list))
-    assert len(decline_btn_list) == 0
+# Teszteset 04 -- Adatkezelési nyilatkozat használata
+# def accept_cookies():
+#     accept_btn = browser.find_element_by_xpath('//div[normalize-space()="I accept!"]')
+#     accept_btn.click()
+#     time.sleep(1)
+#     decline_btn_list = browser.find_elements_by_xpath('//div[normalize-space()="I decline!"]')
+#     print(len(decline_btn_list))
+#     assert len(decline_btn_list) == 0
 
 
-accept_cookies()
-
-# //div[normalize-space()='I decline!']
-# //div[normalize-space()='I accept!']
-
-# # Test eset 12 -- Kijelentkezés       # már bejelentkezett a user és elég csak logoutolni vagy login-t is meg kell hívni előtte???
+# Teszteset 12 -- Kijelentkezés       # már bejelentkezett a user és elég csak logoutolni vagy login-t is meg kell hívni előtte???
 # def logout():
 #     logout_btn = browser.find_element_by_xpath('//a[@active-class="active"]')
 #     logout_btn.click()
@@ -111,8 +101,3 @@ accept_cookies()
 #         print('Sikeres kijelentkezés')
 #     except AssertionError:
 #         print('Nem sikerült kijelentkezni')
-#
-#
-# sign_in()
-# time.sleep(1)
-# logout()
