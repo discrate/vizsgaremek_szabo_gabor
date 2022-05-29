@@ -3,7 +3,7 @@ Automatizálandó tesztesetek:
 01. Regisztráció helytelen adatokkal -----> registration_invalid()
 02. Regisztráció helyes adatokkal -----> registration_valid()       # növelni eggyel a user és emailcím számát!!!
 03. Bejelentkezés -----> sign_in()
-04. Adatkezelési nyilatkozat használata
+04. Adatkezelési nyilatkozat használata -----> accept_cookies()
 05. Adatok listázása
 06. Több oldalas lista bejárása
 07. Új adat bevitel
