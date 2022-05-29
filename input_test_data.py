@@ -11,9 +11,10 @@ user2 = {
 }
 
 # növelni kellene a username-et és az emailcím számát eggyel! password maradhat
-user3 = {
+user = {
+    "counter": 990,
     "name": "szgtest",
-    "email": "szgtest@gmail.com",
+    "domain": "gmail.com",
     "password": "Tesztelek1"
 }
 
