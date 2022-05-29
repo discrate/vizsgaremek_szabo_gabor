@@ -4,14 +4,17 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
 from input_test_data import *
+import random
+import string
 
 browser = webdriver.Chrome(ChromeDriverManager().install())
 browser.get("http://localhost:1667/#/")
 browser.maximize_window()
 
+
 # browser.quit()
 
-# Teszteset 01 -- Regisztráció helytelen adatokkal
+#// Teszteset 01 \\ Regisztráció helytelen adatokkal
 # def registration_invalid():
 #     sign_up_btn = browser.find_element_by_xpath('//a[@href="#/register"]')
 #     sign_up_btn.click()
@@ -34,7 +37,24 @@ browser.maximize_window()
 #         print('Helytelen validáció')
 
 
-# Teszteset 02 -- Regisztráció helyes adatokkal
+
+#// Teszteset 02 \\ Regisztráció helyes adatokkal
+# def random_name(y):
+#     return ''.join(random.choice(string.ascii_letters) for x in range(y))
+#
+#
+# random_name(1)
+# name_gen = random_name(10)
+#
+#
+# def random_email(y):
+#     return ''.join(random.choice(string.ascii_letters) for x in range(y))
+#
+#
+# random_email(1)
+# email_gen = random_email(10) + "@gmail.com"
+#
+#
 # def registration_valid():
 #     sign_up_btn = browser.find_element_by_xpath('//a[@href="#/register"]')
 #     sign_up_btn.click()
@@ -42,9 +62,10 @@ browser.maximize_window()
 #     email_input = browser.find_element_by_xpath('//input[@placeholder="Email"]')
 #     password_input = browser.find_element_by_xpath('//input[@placeholder="Password"]')
 #     sign_up_send_btn = browser.find_element_by_xpath('//button[@class="btn btn-lg btn-primary pull-xs-right"]')
-#     username_input.send_keys("szgteszt998")
-#     email_input.send_keys("szgteszt998@gmail.com")
-#     password_input.send_keys(user3["password"])
+#     username_input.send_keys(name_gen)
+#     email_input.send_keys(email_gen)
+#     password_input.send_keys(user["password"])
+#     time.sleep(2)
 #     sign_up_send_btn.click()
 #     time.sleep(2)
 #     result_message = browser.find_element_by_xpath('//div[@class="swal-title"]')
@@ -58,9 +79,12 @@ browser.maximize_window()
 #
 #     ok_btn = browser.find_element_by_xpath('//button[@class="swal-button swal-button--confirm"]')
 #     ok_btn.click()
+#
+#
+# registration_valid()
 
 
-# Teszteset 03 -- Bejelentkezés
+#// Teszteset 03 \\ Bejelentkezés
 # def sign_in():
 #     home_sign_in_btn = browser.find_elements_by_xpath('//a[@href="#/login"]')[0]
 #     # sign_in_btn = browser.find_elements_by_xpath('//a[normalize-space()="Sign in"]')[0]
@@ -81,17 +105,23 @@ browser.maximize_window()
 #         print('Nem sikerült bejelentkezni')
 
 
-# Teszteset 04 -- Adatkezelési nyilatkozat használata
+#// Teszteset 04 \\ Adatkezelési nyilatkozat használata
 # def accept_cookies():
 #     accept_btn = browser.find_element_by_xpath('//div[normalize-space()="I accept!"]')
 #     accept_btn.click()
 #     time.sleep(1)
 #     decline_btn_list = browser.find_elements_by_xpath('//div[normalize-space()="I decline!"]')
 #     print(len(decline_btn_list))
-#     assert len(decline_btn_list) == 0
+#     try:
+#         assert len(decline_btn_list) == 0
+#     except AssertionError:
+#         print('Hiba merült fel a cookikkal kapcsolatban.')
 
 
-# Teszteset 12 -- Kijelentkezés       # már bejelentkezett a user és elég csak logoutolni vagy login-t is meg kell hívni előtte???
+#// Teszteset 05 \\ Adatok listázása
+
+
+#// Teszteset 12 \\ Kijelentkezés       # már bejelentkezett a user és elég csak logoutolni vagy login-t is meg kell hívni előtte???
 # def logout():
 #     logout_btn = browser.find_element_by_xpath('//a[@active-class="active"]')
 #     logout_btn.click()
