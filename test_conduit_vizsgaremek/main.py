@@ -1,9 +1,8 @@
 import time
 
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
-from input_test_data import *
+from test_conduit_vizsgaremek.input_test_data import *
 import random
 import string
 
@@ -39,49 +38,49 @@ browser.maximize_window()
 
 
 #// Teszteset 02 \\ Regisztráció helyes adatokkal
-# def random_name(y):
-#     return ''.join(random.choice(string.ascii_letters) for x in range(y))
-#
-#
-# random_name(1)
-# name_gen = random_name(10)
-#
-#
-# def random_email(y):
-#     return ''.join(random.choice(string.ascii_letters) for x in range(y))
-#
-#
-# random_email(1)
-# email_gen = random_email(10) + "@gmail.com"
-#
-#
-# def registration_valid():
-#     sign_up_btn = browser.find_element_by_xpath('//a[@href="#/register"]')
-#     sign_up_btn.click()
-#     username_input = browser.find_element_by_xpath('//input[@placeholder="Username"]')
-#     email_input = browser.find_element_by_xpath('//input[@placeholder="Email"]')
-#     password_input = browser.find_element_by_xpath('//input[@placeholder="Password"]')
-#     sign_up_send_btn = browser.find_element_by_xpath('//button[@class="btn btn-lg btn-primary pull-xs-right"]')
-#     username_input.send_keys(name_gen)
-#     email_input.send_keys(email_gen)
-#     password_input.send_keys(user["password"])
-#     time.sleep(2)
-#     sign_up_send_btn.click()
-#     time.sleep(2)
-#     result_message = browser.find_element_by_xpath('//div[@class="swal-title"]')
-#     result_reason = browser.find_element_by_xpath('//div[@class="swal-text"]')
-#     try:
-#         assert result_message.text == "Welcome!"
-#         assert result_reason.text == "Your registration was successful!"
-#         print('Sikeres regisztráció')
-#     except AssertionError:
-#         print('Sikertelen regisztráció')
-#
-#     ok_btn = browser.find_element_by_xpath('//button[@class="swal-button swal-button--confirm"]')
-#     ok_btn.click()
-#
-#
-# registration_valid()
+def name_gen(y):
+    return ''.join(random.choice(string.ascii_letters) for x in range(y))
+
+
+name_gen(1)
+random_name = name_gen(10)
+
+
+def email_gen(y):
+    return ''.join(random.choice(string.ascii_letters) for x in range(y))
+
+
+email_gen(1)
+random_email = email_gen(10) + "@gmail.com"
+
+
+def registration_valid():
+    sign_up_btn = browser.find_element_by_xpath('//a[@href="#/register"]')
+    sign_up_btn.click()
+    username_input = browser.find_element_by_xpath('//input[@placeholder="Username"]')
+    email_input = browser.find_element_by_xpath('//input[@placeholder="Email"]')
+    password_input = browser.find_element_by_xpath('//input[@placeholder="Password"]')
+    sign_up_send_btn = browser.find_element_by_xpath('//button[@class="btn btn-lg btn-primary pull-xs-right"]')
+    username_input.send_keys(random_name)
+    email_input.send_keys(random_email)
+    password_input.send_keys(user["password"])
+    time.sleep(1)
+    sign_up_send_btn.click()
+    time.sleep(2)
+    result_message = browser.find_element_by_xpath('//div[@class="swal-title"]')
+    result_reason = browser.find_element_by_xpath('//div[@class="swal-text"]')
+    try:
+        assert result_message.text == "Welcome!"
+        assert result_reason.text == "Your registration was successful!"
+        print('Sikeres regisztráció')
+    except AssertionError:
+        print('Sikertelen regisztráció')
+
+    ok_btn = browser.find_element_by_xpath('//button[@class="swal-button swal-button--confirm"]')
+    ok_btn.click()
+
+
+registration_valid()
 
 
 #// Teszteset 03 \\ Bejelentkezés

@@ -10,7 +10,6 @@ user2 = {
     "password": "Tesztelek2"
 }
 
-# növelni kellene a username-et és az emailcím számát eggyel! password maradhat
 user = {
     "counter": 990,
     "name": "szgtest",
